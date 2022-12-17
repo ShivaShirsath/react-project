@@ -1,0 +1,427 @@
+* {
+	background: none;
+	touch-action: none;
+	box-sizing: border-box;
+	font-family: Courier New;
+}
+
+body,
+main,
+#root,
+footer,
+.mainWrap,
+.aside,
+.vin {
+	position: fixed;
+}
+
+#root,
+body,
+.mainWrap {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+body {
+	margin: 0.5% 0.5%;
+	padding: 0.5% 0.5%;
+	font-family: "Courier New";
+}
+
+* {
+	border-radius: 1.5vmin;
+}
+#root,
+.aside,
+.vin,
+.aside:hover,
+.editorWrap,
+.inner-element {
+	overflow: hidden;
+}
+#root {
+	background: linear-gradient(120deg, #ff8844, #8844ff, #44ff88);
+	background-size: 500%;
+	background-repeat: no-repeat;
+	animation: gradient 15s linear infinite;
+}
+
+@keyframes gradient {
+	0%,
+	100% {
+		background-position: 100% 100%;
+	}
+	50% {
+		background-position: 0% 0%;
+	}
+}
+
+.clientsList,
+main > #tilt,
+.inner-element {
+	display: flex;
+}
+
+section,
+.mainWrap,
+.aside,
+.vin,
+.client,
+.aside:hover,
+.editorWrap {
+	display: flex;
+	flex-direction: column;
+}
+
+main,
+.parallax-effect,
+.inner-element {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+main {
+	top: 10%;
+	right: 10%;
+	bottom: 10%;
+	left: 10%;
+
+	padding: 0 2.5vmin;
+}
+
+main:has(.mainWrap) {
+	top: 2.5%;
+	right: 2.5%;
+	bottom: 2.5%;
+	left: 2.5%;
+}
+
+h3,
+section > *,
+footer {
+	text-align: center;
+}
+
+footer {
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+footer a {
+	text-decoration: none;
+	color: hsl(50, 100%, 50%);
+}
+
+.client,
+section,
+.clientsList {
+	flex-wrap: wrap;
+}
+section {
+	align-items: stretch;
+}
+
+section:has(button) {
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+section > * {
+	flex-grow: 1;
+}
+
+section > button {
+	margin: 0.5vmin;
+	flex-grow: 0.05;
+	font-size: xx-large;
+}
+
+input {
+	flex: 1;
+	border: none;
+	outline: none;
+	margin: 1.25% 1.25%;
+	padding: 2.5% 2.5%;
+	font-weight: bold;
+	background: hsl(0, 0%, 0%, 0.1);
+}
+
+input[type="button"] {
+	cursor: pointer;
+	background: hsl(0, 0%, 0%, 0.025);
+
+	border-top: 1vmin solid hsl(30, 100%, 50%);
+	border-bottom: 1vmin solid hsl(120, 100%, 40%);
+	transition: all 0.3s ease-in-out;
+}
+
+.createNewBtn:hover,
+footer a:hover {
+	color: hsla(30, 43%, 37%, 0.436);
+	border-color: hsla(30, 43%, 37%, 0.55);
+}
+
+.aside,
+.vin {
+	transition: all 0.3s linear;
+	border: 0.5vmin solid gray;
+	padding: 1vmin;
+
+	align-self: center;
+	right: 1%;
+	bottom: 1%;
+	z-index: 100;
+
+	height: 7.5vh;
+	aspect-ratio: 1;
+}
+
+img {
+	width: 95%;
+	aspect-ratio: 1;
+	margin: 2.5% 2.5%;
+}
+
+.asideInner,
+.client,
+.client > img {
+	border: 0.25vmin solid orange;
+}
+.asideInner {
+	margin: 1% 1%;
+	padding: 1% 1%;
+
+	flex: 1;
+}
+
+.clientsList {
+	gap: 1vmin;
+}
+
+.client,
+.aside:hover,
+.editorWrap,
+.inner-element,
+.inner-element > div,
+.inner-element > loading {
+	align-items: center;
+}
+
+.client {
+	padding: 1vmin;
+
+	font-weight: bold;
+}
+
+.client > img {
+	width: 10vmin;
+	aspect-ratio: 1;
+}
+
+.CodeMirror {
+	min-height: 59vh;
+	min-width: 100%;
+	line-height: 1.6;
+	background: transparent;
+}
+
+iframe,
+.aside:hover > div,
+main > #tilt,
+.parallax-effect,
+.inner-element,
+.inner-element > div,
+.inner-element > loading {
+	width: 100%;
+}
+
+iframe {
+	min-height: 39vh;
+}
+
+.aside:hover {
+	width: 80%;
+	height: 80%;
+
+	justify-content: space-between;
+
+	align-content: baseline;
+
+	background: hsla(160, 100%, 20%, 0.1);
+}
+
+.aside:hover > div {
+	margin: 0.5% 0.5%;
+}
+
+.aside:hover > button {
+	width: 80%;
+	font-size: 125%;
+	font-weight: border;
+	padding: 1% 1%;
+	margin: 1% 1%;
+}
+
+.aside:hover > #copy:hover {
+	background: green;
+}
+
+.aside:hover > #leave:hover {
+	background: red;
+}
+
+.aside:hover > img {
+	width: 25vmin;
+}
+
+input:focus {
+	outline: 0.125vmin solid hsl(30, 100%, 50%);
+}
+
+input:disabled,
+section > button {
+	background: none;
+	outline: none;
+	border: none;
+}
+
+body:has(input[type="text"]:invalid, input[type="text"]:placeholder-shown)
+	#join {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+body:has(#id:not(:placeholder-shown)) #new {
+	pointer-events: none;
+	opacity: 0.5;
+}
+
+.editorWrap {
+	align-content: space-between;
+}
+
+h3 {
+	margin: 0.5% 0.5%;
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+	.aside:hover {
+		-webkit-backdrop-filter: blur(0.25vmin);
+		backdrop-filter: blur(0.25vmin);
+	}
+}
+
+main > #tilt,
+.parallax-effect,
+.inner-element > div,
+.inner-element > loading,
+.inner-element {
+	height: 100%;
+}
+
+main > #tilt {
+	justify-content: space-around;
+}
+
+section > img {
+	width: 25vmin;
+	margin: auto;
+	aspect-ratio: 1;
+}
+
+.vin {
+	left: 0;
+	font-size: 5.25vh;
+	line-height: 5.25vh;
+}
+
+main:has(loading) {
+	padding: 0;
+}
+
+main:has(#tilt) {
+	outline: none;
+	border: none;
+	background: none;
+}
+
+loading {
+	box-shadow: 0 0 1vmin rgba(0, 0, 0, 0.05);
+}
+
+loading {
+	background: linear-gradient(
+		95deg,
+		#ececec88 8%,
+		#f5f5f588 18%,
+		#ececec88 33%
+	);
+	background-size: 200% 200%;
+	animation: 0.25s shine linear infinite;
+}
+
+@keyframes shine {
+	to {
+		background-position-x: -200%;
+	}
+}
+
+.parallax-effect {
+	transform-style: preserve-3d;
+}
+
+.inner-element {
+	transform: translateZ(60px);
+
+	background: rgba(255, 255, 255, 0.025);
+	border-radius: 2.5vmin;
+	box-shadow: 0 0.5vmin 1vmin rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(2.5vmin);
+	-webkit-backdrop-filter: blur(2.5vmin);
+	border: 0.0125vmin solid rgba(255, 255, 255, 0.5);
+}
+
+#xx {
+	border: 1vmin solid red;
+}
+
+#form {
+	height: auto;
+	padding: 2.5vmin;
+}
+
+pre {
+	text-align: left;
+}
+
+img {
+	background: transparent;
+}
+
+iframe {
+	background: white;
+}
+
+#google,
+#github {
+	background-size: 100% 100%;
+	width: 25vmin;
+	aspect-ratio: 1;
+	border: none;
+	outline: none;
+}
+
+section:has(#google) {
+	justify-content: space-around;
+}
+
+#google {
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/archive/5/53/20200429221626%21Google_%22G%22_Logo.svg);
+}
+
+#github {
+	background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/95/Font_Awesome_5_brands_github.svg);
+}
